@@ -1,0 +1,47 @@
+ <table class="table table-striped">
+    <thead>
+    <tr>
+      <th>GithubId</th>
+      <th>Description</th>
+   </tr>
+   </thead>
+     <tbody ng-repeat="item in gist">
+         <tr><td>{{item.id}}</td><td>{{item.description}}</td>
+          <td><a ui-sref="single-gist({id:item.id})" class="btn btn-success">View this gist</a></td></tr>
+    </tbody>
+   </table>
+
+    <!-- <div class="modal fade" id="myModal" role="dialog">
+    <div class="modal-dialog">
+     -->
+    <!-- <button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal">Edit Gist</button> -
+      <!-- Modal content-->
+      <!-- <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+          <h4 class="modal-title">Update Gist</h4>
+        </div>
+        <div class="modal-body">
+          <form name="userForm">
+    <div class="form-group">
+        <label>Description</label>
+        <input type="text" name="name" class="form-control" ng-model="edit.description">
+    </div>
+    <div class="form-group">
+        <label>Public</label><br/>
+      <label class="radio-inline"><input type="radio" name="optradio" ng-value="true" ng-model="edit.public">True</label>
+        <label class="radio-inline"><input type="radio" name="optradio" ng-value="false" ng-model="edit.public">False</label>
+    </div>
+     <div class="form-group">
+      <label>File Upload</label>
+      <input type="text" class="form-control" ng-model="edit.files.gistfile.content">
+
+     </div>
+    
+    <button type="submit" class="btn btn-primary" ng-click="editForm(edit.id)">Edit</button>
+    </form>
+        </div>
+      
+    </div> -->
+  </div>
+  

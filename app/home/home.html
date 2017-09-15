@@ -1,0 +1,51 @@
+<div ng-if="vm.auth.isAuthenticated()">
+	<div class="container">
+	<!-- <a ui-sref="single-gist">Get Single Gist</a> -->
+	<a ui-sref="user-gist">My Gists</a>
+	
+    <!-- <a ui-sref=".paragraph" class="btn btn-danger">Paragraph</a> -->
+      <table class="table table-striped" ng-repeat="item in product.data">
+    <thead>
+    <tr>
+      <th>GithubId</th>
+      <th>GithubUrl</th>
+   </tr>
+   </thead>
+     <tbody>
+         <tr><td>{{item.id}}</td><td>{{item.url}}</td></tr>
+    </tbody>
+   </table>
+  </div>
+    <div class="container">
+    <h1>Post Gist</h1>
+    <!-- FORM -->
+    <form name="userForm" ng-submit="submitForm()">
+    	  <span>{{message}}</span>
+    <div class="form-group">
+        <label>Description</label>
+        <input type="text" name="name" class="form-control" ng-model="user.description">
+    </div>
+    <div class="form-group">
+        <label>Public</label><br/>
+      <label class="radio-inline"><input type="radio" name="optradio" ng-value="true" ng-model="user.public">True</label>
+        <label class="radio-inline"><input type="radio" name="optradio" ng-value="false" ng-model="user.public">False</label>
+    </div>
+     <div class="form-group">
+      <label>File Upload</label>
+      <input type="text" class="form-control" ng-model="user.files.gistfile.content">
+
+     </div>
+    
+    <button type="submit" class="btn btn-primary">Submit</button>
+    </form>
+  
+</div> 
+    
+     
+   
+
+</div>
+<h4 ng-if="!vm.auth.isAuthenticated()">
+  You are not logged in! Please <a ng-click="vm.auth.login()">Log In</a> to continue.
+</h4>
+
